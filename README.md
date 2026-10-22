@@ -28,5 +28,3 @@ TypeScript · React / Next.js · Node.js / Fastify · PostgreSQL / PostGIS · Py
 #### Elsewhere
 
 [Telegram](https://t.me/GrishinPetr) · [Tiny Forge on itch.io](https://tinyforgegs.itch.io) · [Tiny Forge on X](https://x.com/tinyforgegs)
-
-<sub>The cards are rendered weekly by [`scripts/cards.mjs`](scripts/cards.mjs) from the GitHub API, with no third-party services.</sub>
