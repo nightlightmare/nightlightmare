@@ -1,0 +1,48 @@
+name: Profile cards
+
+on:
+  schedule:
+    - cron: '17 4 * * 1' # Mondays
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [scripts/cards.mjs, .github/workflows/cards.yml]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cards
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    # The built-in GITHUB_TOKEN cannot see private repositories or private
+    # contributions, so the cards would shrink to the public part. Without the
+    # secret the job keeps the committed cards instead of overwriting them.
+    env:
+      PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        if: env.PROFILE_TOKEN != ''
+      - uses: actions/setup-node@v4
+        if: env.PROFILE_TOKEN != ''
+        with:
+          node-version: 22
+      - name: Render
+        if: env.PROFILE_TOKEN != ''
+        run: node scripts/cards.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN }}
+      - name: Commit
+        if: env.PROFILE_TOKEN != ''
+        run: |
+          git add assets
+          git diff --cached --quiet && { echo "cards unchanged"; exit 0; }
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -m "Update profile cards"
+          git push
+      - name: Skipped
+        if: env.PROFILE_TOKEN == ''
+        run: echo "::notice::PROFILE_TOKEN is not set; the committed cards were left as they are"
