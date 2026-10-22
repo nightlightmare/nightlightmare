@@ -1,4 +1,4 @@
-### Hi, I'm Petr 👋
+### Hi, I'm Petr
 
 Full-stack developer working mostly in TypeScript. In my own time I build civic tools for Armenia and small games under the name **Tiny Forge**.
 
@@ -6,9 +6,9 @@ Full-stack developer working mostly in TypeScript. In my own time I build civic 
 
 | | |
 | --- | --- |
-| 🛣️ **[open-roads-am](https://github.com/nightlightmare/open-roads-am)** | Report road problems in Armenia: a public map, AI photo classification, moderation and an open API. Next.js, Fastify, PostGIS, MCP. [Live](https://open-roads-am-web.vercel.app) |
-| 🏰 **[Pixel Castle](https://tinyforgegs.itch.io/pixel-castle)** | A compact real-time strategy game on a hex map: 6 campaigns, 30 missions, plays in the browser and on a phone. Godot. |
-| ✈️ **[Tiny Terminal](https://tinyforgegs.itch.io/tiny-terminal)** | A low-poly airport tycoon for PC, in development. Godot .NET. |
+| **[open-roads-am](https://github.com/nightlightmare/open-roads-am)** | Report road problems in Armenia: a public map, AI photo classification, moderation and an open API. Next.js, Fastify, PostGIS, MCP. [Live](https://open-roads-am-web.vercel.app) |
+| **[Pixel Castle](https://tinyforgegs.itch.io/pixel-castle)** | A compact real-time strategy game on a hex map: 6 campaigns, 30 missions, plays in the browser and on a phone. Godot. |
+| **[Tiny Terminal](https://tinyforgegs.itch.io/tiny-terminal)** | A low-poly airport tycoon for PC, in development. Godot .NET. |
 
 #### Stack
 
